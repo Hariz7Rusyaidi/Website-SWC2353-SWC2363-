@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('C:/Users/Hariz Rusyaidi/Pictures/create new.jpg');
+            color: #d7dadc;
+        }
+        h1 {
+            color:#07a016;
+        }    
+        a:link {
+	        color:slategrey;
+	        text-decoration:solid; 
+            text-align: center;
+        }
+        a:visited {
+	        color: #4ae109;
+	        text-decoration:solid;
+            text-align: center;
+        }
+        .new-post-form {
+            background-color: #272729;
+            padding: 20px;
+            border-radius: 4px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .new-post-form h2 {
+            margin-top: 0;
+            color: #d7dadc;
+        }
+        .new-post-form input, .new-post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #1a1a1b;
+            border: 1px solid #343536;
+            color: #d7dadc;
+            border-radius: 4px;
+        }
+        .new-post-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .new-post-form button {
+            background-color: #07a016;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .new-post-form button:hover {
+            background-color: #0061a9;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .success {
+            background-color: #0f5132;
+            color: #d1e7dd;
+        }
+        .error {
+            background-color: #842029;
+            color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 align="center">Post</h1>
+
+    <form id="newPostForm" class="new-post-form">
+        <h2>Create a New Post</h2>
+        <input type="text" id="postTitle" placeholder="Post Title" required>
+        <textarea id="postContent" placeholder="Post Content" required></textarea>
+        <button type="submit">Submit Post</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('newPostForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').value;
+            
+            
+            const newPost = {
+                section: 'NewPost',
+                author: 'Hariz Rusyaidi',
+                timeAgo: 'just now',
+                title: title,
+                content: content,
+                votes: 0,
+                comments: 0
+            };
+
+            
+            setTimeout(() => {
+                
+                const messageDiv = document.getElementById('message');
+                messageDiv.textContent = 'Post created successfully!';
+                messageDiv.className = 'success';
+
+                
+                this.reset();
+
+                
+            }, 1000);
+        });
+    </script>
+
+<nav>
+
+    <a href="home.html"target="_self">- Home -</a> 
+    <a href="community_post.html"target="_self"> Discover -</a> 
+    <a href="account.html"target="_self"> Account -</a> 
+    <a href="about_me.html"target="_self"> About Me -</a> 
+
+  </nav>
+
+</body>
+</html>

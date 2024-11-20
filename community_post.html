@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('C:/Users/Hariz Rusyaidi/Pictures/community.jpg');
+            color: #d7dadc;
+        }
+        h1 {
+            color:#07a016;
+        }
+        a:link {
+	        color:slategrey;
+	        text-decoration:solid;
+            text-align: center;
+        }
+        a:visited {
+	        color: #4ae109;
+	        text-decoration:solid;
+            text-align: center;
+        }
+        .post {
+            background-color: #272729;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .post-header {
+            font-size: 12px;
+            color: #818384;
+            margin-bottom: 5px;
+        }
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .post-content {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .post-footer {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #818384;
+        }
+        .post-footer > div {
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .vote-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .vote-buttons button {
+            background: none;
+            border: none;
+            color: #818384;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0 5px;
+        }
+        .vote-buttons button:hover {
+            color: #4ae109;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 align="center">Discover</h1>
+
+    <div id="postsContainer"></div>
+
+    <script>
+        const posts = [
+            {
+                id: 1,
+                section: 'HorrorGames',
+                author: 'User_3750',
+                timeAgo: '2 mo. ago',
+                title: '"No Players Online" was simple, yet effective.',
+                content: 'This is just my personal opinion, and I understand that opinions can vary from person to person. I\'d recommend giving the game a try to see how it resonates with you.\n\nIn this game, you—the player—load into a server screen of an old FPS game. As the title suggests, there are no other players online. You join an empty server, running around a pixelated environment where your objective is to capture the flag and deliver it to your post. Everything seems standard, but soon, a new player joins. Their name is unreadable. They act just like normal player at first, until we captured the third flag...',
+                votes: 1,
+                comments: 2,
+            },
+            {
+                id: 2,
+                section: 'RiddleInDaHood',
+                author: 'bold_bald_bear',
+                timeAgo: '2 mo. ago',
+                title: 'What kind of moment that you never forgot in life.',
+                content: 'I have heard some real life experience from both online and real world people that change one life trajectory. What yours that not many knows but you want to shared with others?',
+                votes: 1,
+                comments: 10,
+            },
+            {
+                id: 3,
+                section: 'TodayFunFact',
+                author: 'Hmmph',
+                timeAgo: '2 mo ago',
+                title: 'TIL that honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.',
+                content: 'The unique chemical composition of honey, including its low moisture content and high acidity, makes it incredibly resistant to bacterial growth. This is why honey has been used for thousands of years not just as a food, but also for its medicinal properties.',
+                votes: 1,
+                comments: 5,
+            }
+        ];
+
+        function renderPosts() {
+            const postsContainer = document.getElementById('postsContainer');
+            postsContainer.innerHTML = '';
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <div class="post-header">${post.section} • Posted by ${post.author} ${post.timeAgo}</div>
+                    <div class="post-title">${post.title}</div>
+                    <div class="post-content">${post.content}</div>
+                    <div class="post-footer">
+                        <div class="vote-buttons">
+                            <button onclick="vote(${post.id}, 1)">▲</button>
+                            <span id="votes-${post.id}">${post.votes}</span>
+                            <button onclick="vote(${post.id}, -1)">▼</button>
+                        </div>
+                        <div>
+                            <span>💬</span>
+                            <span>${post.comments} comments</span>
+                        </div>
+                        <div>🏆 Give Award</div>
+                        <div>↗️ Share</div>
+                    </div>
+                `;
+                postsContainer.appendChild(postElement);
+            });
+        }
+
+        function vote(postId, value) {
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+                post.votes += value;
+                document.getElementById(`votes-${postId}`).textContent = post.votes;
+            }
+        }
+
+        renderPosts();
+    </script>
+
+<nav>
+
+    <a href="home.html"target="_self">- Home -</a> 
+    <a href="add_self_post.html"target="_self"> Create New -</a> 
+    <a href="account.html"target="_self"> Account -</a> 
+    <a href="about_me.html"target="_self"> About Me -</a> 
+
+</nav>
+
+</body>
+</html>

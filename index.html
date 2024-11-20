@@ -1,0 +1,82 @@
+</DOCTYPE html>
+<html>
+<head>
+    <style>
+    body {
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+*{
+    font-family: Arial;
+    box-sizing: padding-box;
+}
+
+form {
+    width: 1000px;
+    border: 3px solid rgb(252, 252, 252);
+    padding: 20px;
+    background: rgb(10, 84, 22);
+    border-radius: 20px;
+}
+
+h1 {
+    color:ghostwhite;
+    font-family:STCaiyun;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+input {
+    display: block;
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color:lime; /* Changes border color on focus */
+}
+
+button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background: #07a016;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #4ae109;
+}
+    </style>
+</head>    
+<body>
+    <form action="home.html" method="post">
+        <h1>Homie4Life Hangout</h1>
+        <?php if(isset($_GET['error'])) { ?>
+            <p class="error"> <?php echo $GET['error']; ?></p>
+        <?php } ?>
+        <h3><label> Username: </lable></h3>
+        <input type="text" name="username" placeholder="Username"><br>
+        <h3><label> Password: </label></h3>
+        <input type="password" name="password" placeholder="Password"><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+</body>
+</html>

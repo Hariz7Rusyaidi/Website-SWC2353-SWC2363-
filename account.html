@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Account</title>
+
+<style>
+    body {
+        background-image: url('C:/Users/Hariz Rusyaidi/Pictures/account.jpg');
+        color:#4ae109;
+        font-family: Arial;
+        justify-content: center;
+    }
+    h1 {
+        color:#07a016;
+    }
+    form {
+        background-color:transparent;
+        border-radius: 4px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    input {
+      background-color: #343536;
+    }
+    textarea {
+      background-color: #343536;
+    }
+    a:link {
+	    color:slategrey;
+	    text-decoration:solid; 
+      text-align: center;
+    }
+    a:visited {
+	    color: #4ae109;
+	    text-decoration:solid;
+      text-align: center;
+    }
+</style>
+
+</head>
+
+<body>
+    
+  <h1 align="center">Account Info</h1>
+
+  <form action="/submit_form" method="POST">
+
+    <label for="Uname">Username:</label><br>
+    <p> </p>
+    <p>Change:</p>
+    <input type="text" id="uname" name="fname"><br><br>
+
+    <label for="pass">Password:</label><br>
+    <p> </p>
+    <p>Change:</p>
+    <input type="text" id="pass" name="pass"><br><br>
+
+    <label for="email">Email:</label><br>
+    <p> </p>
+    <p>Change:</p>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+  <nav>
+
+    <a href="home.html"target="_self">- Home -</a> 
+    <a href="add_self_post.html"target="_self"> Create New -</a> 
+    <a href="community_post.html"target="_self"> Discover -</a> 
+    <a href="about_me.html"target="_self"> About Me -</a> 
+
+  </nav>
+
+</body>
+</html>
